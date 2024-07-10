@@ -1,0 +1,21 @@
+  img {
+    height: 9rem;
+    object-fit: fill;
+    
+  }
+
+  .card {
+    max-width: 18.75rem;
+    max-height: 31,25rem;
+    border-radius: 10rem;
+    transition: 500ms ease;
+  }
+
+  .card:hover{
+    box-shadow:  0 4px 8px 0 #00000038;
+    transform: scale(1.05)
+  }
+
+  .navbar{
+    background-color:#60463b;
+  }

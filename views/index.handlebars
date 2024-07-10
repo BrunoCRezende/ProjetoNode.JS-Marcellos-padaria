@@ -1,0 +1,106 @@
+
+{{!-- <h1>Agendamentos</h1>
+  <form action="/cadastrar" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+    <div>
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" name="telefone" required>
+    </div>
+    <div>
+      <label for="origem">Origem:</label>
+      <input type="text" id="origem" name="origem" required>
+    </div>
+    <div>
+      <label for="data_contato">Data de Contato:</label>
+      <input type="date" id="data_contato" name="data_contato" required>
+    </div>
+    <div>
+      <label for="descricao">Observação:</label>
+      <textarea id="descricao" name="descricao" required></textarea>
+    </div>
+    <div>
+      <label for="imagem">Imagem:</label>
+      <input type="file" id="imagem" name="imagem">
+    </div>
+    <button type="submit">Cadastrar</button>
+  </form> --}}
+  
+
+
+
+
+     
+    <div class = "container">
+        <div id="Cardapio">
+            <div class = "row">
+                {{#each Cardapio}}
+                    <div class = "col-sm">
+                       <div class="card" style="width: 18rem;">
+                          {{#if imagem}}
+                            <img src="{{imagem}}" alt="Imagem de {{nome}}">
+                          {{/if}}
+                        <div class="card-body">
+                          <h5 class="card-title">{{nome}}</h5>
+                          <p class="card-text">Valor: {{valor}}</p></p>
+                          <p class="card-text">Ingredientes: {{ingrediente}}</p></p>
+                          <p class="card-text">descricao: {{descricao}}</p></p>
+                          <div class = "container text-center">
+                            <div class = "row align-self-center">
+                              <div class = "col"><a href="/editar/{{id}}"><button class="btn btn-primary">Editar</button></a></div>
+                              <div class = "col"><a href="/excluir/{{id}}"><button class="btn btn-danger">Excluir</button></a></div></div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+    <h4>Consultar - Cardápio</h4>
+    <p>Sistema utilizado para listar os itens do cardápio</p>
+    <div class="row">
+        <div class="col-1">
+            &nbsp;
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Ingredientes</th>
+                <th>Descrição</th>
+                <th>Observação</th>
+                <th>Imagem</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{this.nome}}</td>
+                <td>{{this.valor}}</td>
+                <td>{{this.ingrediente}}</td>
+                <td>{{this.descricao}}</td>
+                <td>{{this.observacao}}</td>
+                <td>
+                    {{#if this.imagem}}
+                    <img src="{{this.imagem}}" alt="Imagem de {{this.nome}}" style="max-width: 100px;">
+                    {{else}}
+                    Sem imagem
+                    {{/if}}
+                </td>
+                <td>
+                    <a href="/editar/{{this.id}}"><button class="btn btn-primary">Editar</button></a>
+                    <a href="/excluir/{{this.id}}"><button class="btn btn-danger">Excluir</button></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

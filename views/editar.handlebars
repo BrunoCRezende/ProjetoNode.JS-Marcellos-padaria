@@ -1,0 +1,51 @@
+    <div class="container">
+        <h4>Atualizar - Itens do Cardapio</h4>
+        <p>Aqui você pode alrterar as informações de um item do cardapio</p>
+            <div class="row">
+        <div class="col-1">
+            &nbsp;
+        </div>
+    </div>
+    <form action="/atualizar" method="POST" enctype="multipart/form-data">
+        <input type="hidden" class="form-control" id="id" name="id" value="{{data.id}}">
+        <div class="mb-3 text-start">
+            <label class="form-label fw-semibold fw-semibold">Nome:</label>
+            <input type="text" maxlength="20" name="nome" class="form-control" id="nome" placeholder="Nome do Produto" value="{{data.nome}}">
+        </div>
+        <div class="mb-3 text-start">
+            <label class="form-label fw-semibold">valor:</label>
+            <input type="text" maxlength="5" name="valor" class="form-control" id="valor" placeholder="00.00" value="{{data.valor}}">
+        </div>
+        <div class="mb-3 text-start">
+            <label class="form-label fw-semibold">ingrediente:</label>
+            <input type="text" maxlength="35" name="ingrediente" class="form-control" id="ingrediente" placeholder="Ingredientes Usados no Produto" value="{{data.ingrediente}}">
+        </div>
+        <div class="mb-3 text-start">
+            <label class="form-label fw-semibold">descricao:</label>
+            <textarea name="descricao" maxlength="100" class="form-control" placeholder="Descrição do produto" id="descricao" style="height: 100px">{{data.descricao}}</textarea>
+        </div>
+        <div class="row">
+            <div class="col align-self-center">
+                <div class="input-group mb-3">
+                  <label class="input-group-text fw-semibold" for="inputGroupFile01">Nova Imagem</label>
+                  <input type="file" class="form-control" id="inputGroupFile01" name="imagem">
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3 text-start">
+                  <label class="form-label fw-semibold">Imagem Atual:</label>
+                  <br>
+                  {{#if data.imagem}}
+                    <img src="{{data.imagem}}" alt="Imagem de {{data.nome}}">
+                  {{else}}
+                    <p>Imagem indisponivel</p>
+                  {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 text-start">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </form>
+</p>
+        

@@ -1,0 +1,46 @@
+    <div class ="row align-items-center">
+      <div class="col">
+            <div class="container">
+                <h4>Cadastrar - Itens no Cardapio</h4>
+                <p>preencha o formulario para adicionar um novo item no menu da padaria</p>
+                    <div class="row">
+                <div class="col-1">
+                    &nbsp;
+                </div>
+            </div>
+          <form action="/cadastrar" method="POST" enctype="multipart/form-data">
+          <div class = "row">
+            <div class = "col"> 
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nome do Item</label>
+                  <input type="text" class="form-control" maxlength="25" id="nome" name="nome" placeholder="Nome do Produto" required>
+                </div>
+            </div>
+            <div class = "col"> 
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Valor do Item</label>
+                  <input type="number" maxlength="5" min="1" step="any" class="form-control" id="valor" name="valor" placeholder="00.00" required>
+                </div>
+            </div>
+            </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Ingredientes</label>
+                    <input type="text" maxlength="35" class="form-control" id="ingrediente" name="ingrediente" placeholder="Ingredientes Usados no Produto" required>
+                </div>
+
+                <div class="mb-3 text-start">
+                    <label class="form-label">Descrição:</label>
+                    <textarea name="descricao" maxlength="100" class="form-control" placeholder="Descrição do produto" id="descricao" style="height: 100px"></textarea>
+                </div>
+
+            <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupFile01">Imagem</label>
+          <input type="file" class="form-control" id="inputGroupFile01" name="imagem">    &nbsp;
+        </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+      </div>
+    </div>
+    
